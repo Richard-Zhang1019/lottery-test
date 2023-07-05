@@ -3,31 +3,19 @@ import { Navigate, RouteObject } from 'react-router-dom'
 
 const Home = lazy(() => import('@/pages/Home'))
 const About = lazy(() => import('@/pages/About'))
-const Profile = lazy(() => import('@/pages/Profile'))
-const NotFound = lazy(() => import('@/pages/NotFound'))
 
 const routes = [
   {
     path: '/',
-    element: <Navigate to="/home/about" />
+    element: <Navigate to="/home" />
   },
   {
     path: 'home',
-    element: <Home />,
-    children: [
-      {
-        path: 'about',
-        element: <About />
-      },
-      {
-        path: 'profile',
-        element: <Profile />
-      }
-    ]
+    element: <Home />
   },
   {
-    path: '*',
-    element: <NotFound />
+    path: 'about',
+    element: <About />
   }
 ] as RouteObject[]
 
